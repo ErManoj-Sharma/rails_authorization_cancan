@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1 or /questions/1.json
   def show
+    authorize! :update ,@question
   end
 
   # GET /questions/new
@@ -17,6 +18,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+    authorize! :update ,@question
   end
 
   # POST /questions or /questions.json
@@ -50,6 +52,7 @@ class QuestionsController < ApplicationController
 
   # DELETE /questions/1 or /questions/1.json
   def destroy
+    authorize! :destory ,@question
     @question.destroy
 
     respond_to do |format|

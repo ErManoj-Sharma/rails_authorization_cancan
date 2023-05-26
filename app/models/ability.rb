@@ -5,7 +5,7 @@ class Ability
 
   def initialize(user)
     if user.admin?
-      cam :manage, :all
+      can :manage, :all
     else
       can :update, Question do |question|
         question.user == user
