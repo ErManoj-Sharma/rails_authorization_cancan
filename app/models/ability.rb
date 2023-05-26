@@ -6,6 +6,8 @@ class Ability
   def initialize(user)
     if user.admin?
       can :manage, :all
+      can :access, :rails_admin
+      can :read, :dashboard  
     else
       can :update, Question do |question|
         question.user == user
