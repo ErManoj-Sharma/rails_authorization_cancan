@@ -1,11 +1,13 @@
 RailsAdmin.config do |config|
   config.asset_source = :webpacker
 
+  # configure main application name 
   config.main_app_name = "Demo Test Application "
 
-  ### Popular gems integration
-
+  # configure the parent controller for error handling
   config.parent_controller = "::ApplicationController"
+  
+  # configure the current user
   config.current_user_method(&:current_user)
 
   ## == CancanCan ==
